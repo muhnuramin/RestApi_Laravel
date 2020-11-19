@@ -23,7 +23,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Start Bootstrap</a>
+            <a class="navbar-brand" href="#">Tugas REST API</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -65,15 +65,15 @@
                 <!-- Blog Post -->
                 @foreach($artikel as $a)
                 <div class="card mb-4">
-                    <img class="card-img-top" src="{{ $a->urlToImage}}" alt="Card image cap">
+                    <img class="card-img-top img1" src="{{ $a->urlToImage}}" alt="Card image cap">
                     <div class="card-body">
                         <h2 class="card-title">{{ $a->title}}</h2>
                         <p class="card-text">{{ $a->description}}</p>
                         <a href="{{ $a->url}}" class="btn btn-primary">Read More &rarr;</a>
                     </div>
                     <div class="card-footer text-muted">
-                        Posted on January 1, 2020 by
-                        <a href="#">Start Bootstrap</a>
+                    {{ $a->publishedAt}}
+                        <a href="#">{{ $a->author}}</a>
                     </div>
                 </div>
                 @endforeach
