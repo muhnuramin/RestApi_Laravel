@@ -41,9 +41,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Services</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -61,7 +58,6 @@
                     <small>Secondary Text</small>
                 </h1>
 
-
                 <!-- Blog Post -->
                 @foreach($artikel as $a)
                 <div class="card mb-4">
@@ -72,7 +68,7 @@
                         <a href="{{ $a->url}}" class="btn btn-primary">Read More &rarr;</a>
                     </div>
                     <div class="card-footer text-muted">
-                    {{ $a->publishedAt}}
+                        {{ $a->publishedAt}}
                         <a href="#">{{ $a->author}}</a>
                     </div>
                 </div>
@@ -94,12 +90,14 @@
 
                 <!-- Search Widget -->
                 <div class="card my-4">
-                    <h5 class="card-header">Search</h5>
+                    <h5 class="card-header">Search Article</h5>
                     <div class="card-body">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search for...">
-                            <span class="input-group-append">
-                                <button class="btn btn-secondary" type="button">Go!</button>
+                            <form class="form-inline" action="/search">@csrf 
+                            <!-- <label for="keyword">Kata kunci :</label> -->
+                            <input type="text" class="form-control" name="keyword"><button type="submit"
+                                    class="btn btn-primary">Search</button>
+                            </form>
                             </span>
                         </div>
                     </div>
